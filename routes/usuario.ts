@@ -109,7 +109,7 @@ userRoutes.post('/update', verificaToken, (req: any, res: Response) => {
     //Instruccion de Mongoose (ORM)
     //Con {new:true} le decimos a mongoose que queremos obtener la informacion actualizada 
     //despues de la actualizacion
-    
+
     Usuario.findByIdAndUpdate(req.usuario._id, user, { new: true }, (err, userDB) => {
 
         if (err) throw err;

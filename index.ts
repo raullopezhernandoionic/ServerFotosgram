@@ -1,5 +1,7 @@
 import Server from './classes/server';
+
 import userRoutes from './routes/usuario';
+import postRoutes from './routes/post';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
@@ -12,6 +14,7 @@ server.app.use( bodyParser.json() );
 
 // Rutas de mi app
 server.app.use('/user', userRoutes );
+server.app.use('/posts', postRoutes);
 
 
 // Conectar DB
