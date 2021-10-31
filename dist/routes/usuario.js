@@ -104,4 +104,12 @@ userRoutes.post('/update', autenticacion_1.verificaToken, (req, res) => {
         });
     });
 });
+//Metodo para retornanr la informacion del usuario que hay dentro del token
+userRoutes.get('/', [autenticacion_1.verificaToken], (req, res) => {
+    const usuario = req.usuario;
+    res.json({
+        ok: true,
+        usuario
+    });
+});
 exports.default = userRoutes;

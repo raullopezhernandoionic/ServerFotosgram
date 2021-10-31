@@ -4,6 +4,8 @@ import userRoutes from './routes/usuario';
 import postRoutes from './routes/post';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+// import fileUpload from 'express-fileupload';
+let fileupload = require("express-fileupload")
 
 const server = new Server();
 
@@ -16,6 +18,9 @@ server.app.use( bodyParser.json() );
 server.app.use('/user', userRoutes );
 server.app.use('/posts', postRoutes);
 
+
+//FileUpload - Middleware
+server.app.use(fileupload());
 
 // Conectar DB
 mongoose.connect('mongodb://localhost:27017/fotosgram', 
